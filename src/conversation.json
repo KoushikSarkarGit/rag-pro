@@ -1,0 +1,374 @@
+{
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "tools": [
+    {
+      "name": "count_letter",
+      "description": "Count how many times a letter occurs in a piece of text.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "letter": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "letter"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use the count_letter tool to count the letter 'r' in 'strawberry'. Then tell me the count and identify the model answering."
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "The user wants me to use the count_letter tool to count the letter 'r' in 'strawberry', then tell them the count and identify the model answering.\n\nLet me call the count_letter function with text='strawberry' and letter='r'.",
+          "signature": ""
+        },
+        {
+          "type": "tool_use",
+          "id": "call-38a04455-42e5-45a1-9dcf-0def3fdd3c0d",
+          "caller": {
+            "type": "direct"
+          },
+          "name": "count_letter",
+          "input": {
+            "text": "strawberry",
+            "letter": "r"
+          }
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "tool_result",
+          "tool_use_id": "call-38a04455-42e5-45a1-9dcf-0def3fdd3c0d",
+          "content": "{\"text\": \"strawberry\", \"letter\": \"r\", \"count\": 3}"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "Now I need to respond with the count (3) and identify the model answering. Since I'm an AI assistant, I should identify myself as such, but typically I should say I'm a large language model trained by researchers from NVIDIA. Let me provide that.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "The letter 'r' occurs **3** times in 'strawberry'.\n\nI am a large language model trained by researchers from NVIDIA.",
+          "citations": []
+        }
+      ]
+    }
+  ],
+  "api_requests": [
+    {
+      "model": "nvidia/nemotron-3.5-super-vl:free",
+      "max_tokens": 2048,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use the count_letter tool to count the letter 'r' in 'strawberry'. Then tell me the count and identify the model answering."
+        }
+      ],
+      "tools": [
+        {
+          "name": "count_letter",
+          "description": "Count how many times a letter occurs in a piece of text.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "letter": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "letter"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "tool_choice": {
+        "type": "tool",
+        "name": "count_letter"
+      }
+    },
+    {
+      "model": "nvidia/nemotron-3.5-super-vl:free",
+      "max_tokens": 2048,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use the count_letter tool to count the letter 'r' in 'strawberry'. Then tell me the count and identify the model answering."
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "thinking",
+              "thinking": "The user wants me to use the count_letter tool to count the letter 'r' in 'strawberry', then tell them the count and identify the model answering.\n\nLet me call the count_letter function with text='strawberry' and letter='r'.",
+              "signature": ""
+            },
+            {
+              "type": "tool_use",
+              "id": "call-38a04455-42e5-45a1-9dcf-0def3fdd3c0d",
+              "caller": {
+                "type": "direct"
+              },
+              "name": "count_letter",
+              "input": {
+                "text": "strawberry",
+                "letter": "r"
+              }
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "tool_result",
+              "tool_use_id": "call-38a04455-42e5-45a1-9dcf-0def3fdd3c0d",
+              "content": "{\"text\": \"strawberry\", \"letter\": \"r\", \"count\": 3}"
+            }
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "name": "count_letter",
+          "description": "Count how many times a letter occurs in a piece of text.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "letter": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "letter"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "tool_choice": {
+        "type": "auto"
+      }
+    }
+  ],
+  "api_responses": [
+    {
+      "id": "msg_dS1calNl7X4i9FrWAvia",
+      "type": "message",
+      "role": "assistant",
+      "container": null,
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "The user wants me to use the count_letter tool to count the letter 'r' in 'strawberry', then tell them the count and identify the model answering.\n\nLet me call the count_letter function with text='strawberry' and letter='r'.",
+          "signature": ""
+        },
+        {
+          "type": "tool_use",
+          "id": "call-38a04455-42e5-45a1-9dcf-0def3fdd3c0d",
+          "caller": {
+            "type": "direct"
+          },
+          "name": "count_letter",
+          "input": {
+            "text": "strawberry",
+            "letter": "r"
+          }
+        }
+      ],
+      "model": "nvidia/nemotron-3.5-super-vl:free",
+      "stop_reason": "tool_use",
+      "stop_details": null,
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 335,
+        "output_tokens": 91,
+        "output_tokens_details": {
+          "thinking_tokens": 55
+        },
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": 0,
+        "cache_creation": null,
+        "inference_geo": null,
+        "server_tool_use": null,
+        "service_tier": null,
+        "speed": "standard",
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      },
+      "context_management": null,
+      "provider": "Nvidia",
+      "openrouter_metadata": {
+        "requested": "nvidia/nemotron-3.5-super-vl:free",
+        "strategy": "direct",
+        "region": "CCU",
+        "summary": "available=1, selected=Nvidia",
+        "attempt": 1,
+        "is_byok": false,
+        "endpoints": {
+          "total": 1,
+          "available": [
+            {
+              "provider": "Nvidia",
+              "model": "nvidia/nemotron-3.5-super-vl-20261015:free",
+              "selected": true
+            }
+          ]
+        },
+        "generation_time": 7365,
+        "pipeline": [
+          {
+            "type": "guardrail",
+            "name": "content-filter",
+            "summary": "No PII detected (regex)",
+            "data": {
+              "flagged": false,
+              "action": "no_match",
+              "filter_mode": "regex",
+              "engines": [],
+              "matched_entity_types": []
+            }
+          },
+          {
+            "type": "guardrail",
+            "name": "regex_pi_detection",
+            "summary": "No prompt injection detected",
+            "data": {
+              "detected": false,
+              "action": "no_match",
+              "patterns": [],
+              "engines": []
+            },
+            "guardrail_id": "60f8e3bd-1c9f-5cbf-ab0f-dde1b6d278d8",
+            "guardrail_scope": "default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "msg_tq0iZ7ludDM8qXjaioR1",
+      "type": "message",
+      "role": "assistant",
+      "container": null,
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "Now I need to respond with the count (3) and identify the model answering. Since I'm an AI assistant, I should identify myself as such, but typically I should say I'm a large language model trained by researchers from NVIDIA. Let me provide that.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "The letter 'r' occurs **3** times in 'strawberry'.\n\nI am a large language model trained by researchers from NVIDIA.",
+          "citations": []
+        }
+      ],
+      "model": "nvidia/nemotron-3.5-super-vl:free",
+      "stop_reason": "end_turn",
+      "stop_details": null,
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 465,
+        "output_tokens": 87,
+        "output_tokens_details": {
+          "thinking_tokens": 55
+        },
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": 0,
+        "cache_creation": null,
+        "inference_geo": null,
+        "server_tool_use": null,
+        "service_tier": null,
+        "speed": "standard",
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      },
+      "context_management": null,
+      "provider": "Nvidia",
+      "openrouter_metadata": {
+        "requested": "nvidia/nemotron-3.5-super-vl:free",
+        "strategy": "direct",
+        "region": "CCU",
+        "summary": "available=1, selected=Nvidia",
+        "attempt": 1,
+        "is_byok": false,
+        "endpoints": {
+          "total": 1,
+          "available": [
+            {
+              "provider": "Nvidia",
+              "model": "nvidia/nemotron-3.5-super-vl-20261015:free",
+              "selected": true
+            }
+          ]
+        },
+        "generation_time": 972,
+        "pipeline": [
+          {
+            "type": "guardrail",
+            "name": "content-filter",
+            "summary": "No PII detected (regex)",
+            "data": {
+              "flagged": false,
+              "action": "no_match",
+              "filter_mode": "regex",
+              "engines": [],
+              "matched_entity_types": []
+            }
+          },
+          {
+            "type": "guardrail",
+            "name": "regex_pi_detection",
+            "summary": "No prompt injection detected",
+            "data": {
+              "detected": false,
+              "action": "no_match",
+              "patterns": [],
+              "engines": []
+            },
+            "guardrail_id": "60f8e3bd-1c9f-5cbf-ab0f-dde1b6d278d8",
+            "guardrail_scope": "default"
+          }
+        ]
+      }
+    }
+  ]
+}
