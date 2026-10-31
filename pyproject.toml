@@ -18,6 +18,7 @@ dependencies = [
     "fastapi>=0.162.0",
     "slowapi>=0.1.10",
     "langsmith>=0.14.11",
+    "pydantic-settings>=2.16",
 ]
 
 

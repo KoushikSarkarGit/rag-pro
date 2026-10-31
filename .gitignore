@@ -1,1 +1,2 @@
 *.env
+logs/security_demo.log
