@@ -1,6 +1,6 @@
 import hashlib
-from typing import Optional
 from time import time
+from typing import Optional
 
 
 class ResponseCache:
@@ -15,7 +15,7 @@ class ResponseCache:
     
     def __init__(self, ttl_seconds: int = 300):
         self.ttl = ttl_seconds
-        self.cache: dict[str, dict] = {}
+        self._cache: dict[str, dict] = {}
         self.hits = 0
         self.misses = 0
 
@@ -33,14 +33,13 @@ class ResponseCache:
         Returns None on cache miss.
         """
         key = self._make_key(query)
-        if key in self._cache:
-            entry = self._cache[key]
-        # Check TTL
-        if time.time() - entry["timestamp"] < self.ttl:
-            self.hits += 1
-            return entry["response"]
-        else:
-            # Expired - remove it
+        entry = self._cache.get(key)
+        if entry is not None:
+            if time() - entry["timestamp"] < self.ttl:
+                self.hits += 1
+                return entry["response"]
+
+            # Expired entries count as misses and are removed.
             del self._cache[key]
 
         self.misses += 1
@@ -51,7 +50,7 @@ class ResponseCache:
         key = self._make_key(query)
         self._cache[key] = {
             "response": response,
-            "timestamp": time.time(),
+            "timestamp": time(),
             "query": query,
         }
 

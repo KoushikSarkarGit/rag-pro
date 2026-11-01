@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     openrouter_api_key: str
+    primary_model: str = 'nvidia/nemotron-3.5-super-vl:free'
     base_model: str = 'nvidia/nemotron-3-embed-1b:free'
     fallback_model: str = ''
 
