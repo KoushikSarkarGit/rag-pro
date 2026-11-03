@@ -1,2 +1,7 @@
 *.env
-logs/security_demo.log
+logs/*
+
+__pycache__/
+*.py[cod]
+*$py.class
+
